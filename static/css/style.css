@@ -161,19 +161,44 @@ body {
 
 .card {
     background: #fff;
-    border-radius: 10px;
+    border-radius: 5px;
     padding: 10px 0.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.1rem;
 }
 
 .card-body {
     flex: 1 1 auto;
     background: #fff;
-    border-radius: 10px;
+    border-radius: 5px;
     padding: 10px 2rem;
-    margin-bottom: 1rem; 
+    margin-bottom: 1rem;
+    gap: 1rem;
 }
 
+.card-body .row {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    justify-content: flex-start;
+}
+
+.card-body .row .col-md-1 {
+    flex: 0 0 100px; /* Fixed width for columns */
+}
+
+.card-body .row .col-md-5 {
+    flex: 0 0 300px; /* Fixed width for columns */
+}
+
+.card-body .row .form-group {
+    width: 100%;
+}
+
+label {
+    font-weight: 600;
+}
+
+/* 
 .row {
     display: flex;
     flex-wrap: wrap;
@@ -201,4 +226,4 @@ body {
     flex-basis: 0;
     flex-grow: 1;
     max-width: 100%; 
-}
+} */

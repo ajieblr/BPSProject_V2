@@ -58,7 +58,7 @@
     <div class="main--content">
         <div class="header--wrapper">
             <div class="header--title">
-                <span>Primary</span>
+                <span>News Analyst</span>
                 <h2>Dashboard</h2>
             </div>
             <div class="user--info">
@@ -97,9 +97,88 @@
                             </select>
                         </div>
                     </div>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="">Kategori  Hasil Prediksi ML</label>
+                            <select id="filter-kategori-model" class="form-select form-select-lg filter">
+                                <option value="">--Pilih--</option>
+                                <option value="A1">A1 - Pertanian, Peternakan, Perburuan dan Jasa Pertanian </option>
+                                <option value="A2">A2 - Kehutanan dan Penebangan Kayu </option>
+                                <option value="A3">A3 - Perikanan </option>
+                                <option value="B1">B1 - Pertambangan Migas </option>
+                                <option value="B2">B2 - Pertambangan Batu Bara </option>
+                                <option value="B3">B3 - Pertambangan Biji Logam </option>
+                                <option value="B4">B4 - Pertambangan dan Penggalian Lainnya </option>
+                                <option value="C1">C1 - Industri Migas </option>
+                                <option value="C2">C2 - Industri Makan Minum (CPO, padi,dll) </option>
+                                <option value="C3">C3 - Industri Kimia dan Farmasi </option>
+                                <option value="C4">C4 - Industri Barang Galian </option>
+                                <option value="C5">C5 - Industri selain 1-4 </option>
+                                <option value="D">D - Pengadaan Listrik dan Gas </option>
+                                <option value="E">E - Pengadaan Air, Pengelolaan Sampah, Limbah dan Daur Ulang </option>
+                                <option value="F">F - Konstruksi </option>
+                                <option value="G">G - Perdagangan Besar dan Eceran; Reparasi Mobil dan Sepeda Motor </option>
+                                <option value="H1">H1 - Transportasi Darat </option>
+                                <option value="H2">H2 - Transportasi Udara </option>
+                                <option value="H3">H3 - Transportasi Laut </option>
+                                <option value="H4">H4 - Penyeberangan/ASDP </option>
+                                <option value="H5">H5 - Penunjang Angkutan dan Pergudangan </option>
+                                <option value="I">I - Penyediaan Akomodasi dan Makan Minum </option>
+                                <option value="J">J - Informasi dan Komunikasi </option>
+                                <option value="K">K - Jasa Keuangan dan Asuransi </option>
+                                <option value="L">L - Real Estate </option>
+                                <option value="MN">MN - Jasa Perusahaan </option>
+                                <option value="O">O - Administrasi Pemerintahan, Pertahanan dan Jaminan Sosial Wajib </option>
+                                <option value="P">P - Jasa Pendidikan </option>
+                                <option value="Q">Q - Jasa Kesehatan dan Kegiatan Sosial </option>
+                                <option value="RSTU">RSTU - Jasa lainnya </option>
+                                <option value="X">X - Tidak relevan </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="">Kategori  Hasil Verifikasi Manual</label>
+                            <select id="filter-kategori-manual"  class="form-select form-select-lg filter">
+                                <option value="">--Pilih--</option>
+                                <option value="A1">A1 - Pertanian, Peternakan, Perburuan dan Jasa Pertanian </option>
+                                <option value="A2">A2 - Kehutanan dan Penebangan Kayu </option>
+                                <option value="A3">A3 - Perikanan </option>
+                                <option value="B1">B1 - Pertambangan Migas </option>
+                                <option value="B2">B2 - Pertambangan Batu Bara </option>
+                                <option value="B3">B3 - Pertambangan Biji Logam </option>
+                                <option value="B4">B4 - Pertambangan dan Penggalian Lainnya </option>
+                                <option value="C1">C1 - Industri Migas </option>
+                                <option value="C2">C2 - Industri Makan Minum (CPO, padi,dll) </option>
+                                <option value="C3">C3 - Industri Kimia dan Farmasi </option>
+                                <option value="C4">C4 - Industri Barang Galian </option>
+                                <option value="C5">C5 - Industri selain 1-4 </option>
+                                <option value="D">D - Pengadaan Listrik dan Gas </option>
+                                <option value="E">E - Pengadaan Air, Pengelolaan Sampah, Limbah dan Daur Ulang </option>
+                                <option value="F">F - Konstruksi </option>
+                                <option value="G">G - Perdagangan Besar dan Eceran; Reparasi Mobil dan Sepeda Motor </option>
+                                <option value="H1">H1 - Transportasi Darat </option>
+                                <option value="H2">H2 - Transportasi Udara </option>
+                                <option value="H3">H3 - Transportasi Laut </option>
+                                <option value="H4">H4 - Penyeberangan/ASDP </option>
+                                <option value="H5">H5 - Penunjang Angkutan dan Pergudangan </option>
+                                <option value="I">I - Penyediaan Akomodasi dan Makan Minum </option>
+                                <option value="J">J - Informasi dan Komunikasi </option>
+                                <option value="K">K - Jasa Keuangan dan Asuransi </option>
+                                <option value="L">L - Real Estate </option>
+                                <option value="MN">MN - Jasa Perusahaan </option>
+                                <option value="O">O - Administrasi Pemerintahan, Pertahanan dan Jaminan Sosial Wajib </option>
+                                <option value="P">P - Jasa Pendidikan </option>
+                                <option value="Q">Q - Jasa Kesehatan dan Kegiatan Sosial </option>
+                                <option value="RSTU">RSTU - Jasa lainnya </option>
+                                <option value="X">X - Tidak relevan </option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+        
     </div>
 </body>
 </html>
