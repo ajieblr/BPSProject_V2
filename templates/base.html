@@ -28,6 +28,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <title>Document</title>
 </head>
 <body>
@@ -72,107 +73,181 @@
         <div class="page-content">
             <div class="card">
                 <div class="card-header">Data Fenomena (Aktif)</div>
+                <div class="card-body">
+                    <div class="row" id="row-tampilan">
+                        <div class="col-md-1">
+                            <div class="form-group">
+                                <label>Tahun</label>
+                                <select id="filter-tahun" class="js-example-basic-single w-100" data-width="100%" n>
+                                    <option value="">--Pilih--</option>
+                                    <option value="2024">2024</option>
+                                    <option value="2023">2023</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <div class="form-group">
+                                <label>Triwulan</label>
+                                <select id="filter-triwulan" class="form-select form-select-lg filter">
+                                    <option value="">--Pilih--</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="form-group">
+                                <label>Kategori  Hasil Prediksi ML</label>
+                                <select id="filter-kategori-model" class="form-select form-select-lg filter">
+                                    <option value="">--Pilih--</option>
+                                    <option value="A1">A1 - Pertanian, Peternakan, Perburuan dan Jasa Pertanian </option>
+                                    <option value="A2">A2 - Kehutanan dan Penebangan Kayu </option>
+                                    <option value="A3">A3 - Perikanan </option>
+                                    <option value="B1">B1 - Pertambangan Migas </option>
+                                    <option value="B2">B2 - Pertambangan Batu Bara </option>
+                                    <option value="B3">B3 - Pertambangan Biji Logam </option>
+                                    <option value="B4">B4 - Pertambangan dan Penggalian Lainnya </option>
+                                    <option value="C1">C1 - Industri Migas </option>
+                                    <option value="C2">C2 - Industri Makan Minum (CPO, padi,dll) </option>
+                                    <option value="C3">C3 - Industri Kimia dan Farmasi </option>
+                                    <option value="C4">C4 - Industri Barang Galian </option>
+                                    <option value="C5">C5 - Industri selain 1-4 </option>
+                                    <option value="D">D - Pengadaan Listrik dan Gas </option>
+                                    <option value="E">E - Pengadaan Air, Pengelolaan Sampah, Limbah dan Daur Ulang </option>
+                                    <option value="F">F - Konstruksi </option>
+                                    <option value="G">G - Perdagangan Besar dan Eceran; Reparasi Mobil dan Sepeda Motor </option>
+                                    <option value="H1">H1 - Transportasi Darat </option>
+                                    <option value="H2">H2 - Transportasi Udara </option>
+                                    <option value="H3">H3 - Transportasi Laut </option>
+                                    <option value="H4">H4 - Penyeberangan/ASDP </option>
+                                    <option value="H5">H5 - Penunjang Angkutan dan Pergudangan </option>
+                                    <option value="I">I - Penyediaan Akomodasi dan Makan Minum </option>
+                                    <option value="J">J - Informasi dan Komunikasi </option>
+                                    <option value="K">K - Jasa Keuangan dan Asuransi </option>
+                                    <option value="L">L - Real Estate </option>
+                                    <option value="MN">MN - Jasa Perusahaan </option>
+                                    <option value="O">O - Administrasi Pemerintahan, Pertahanan dan Jaminan Sosial Wajib </option>
+                                    <option value="P">P - Jasa Pendidikan </option>
+                                    <option value="Q">Q - Jasa Kesehatan dan Kegiatan Sosial </option>
+                                    <option value="RSTU">RSTU - Jasa lainnya </option>
+                                    <option value="X">X - Tidak relevan </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="form-group">
+                                <label>Kategori  Hasil Verifikasi Manual</label>
+                                <select id="filter-kategori-manual"  class="form-select form-select-lg filter">
+                                    <option value="">--Pilih--</option>
+                                    <option value="A1">A1 - Pertanian, Peternakan, Perburuan dan Jasa Pertanian </option>
+                                    <option value="A2">A2 - Kehutanan dan Penebangan Kayu </option>
+                                    <option value="A3">A3 - Perikanan </option>
+                                    <option value="B1">B1 - Pertambangan Migas </option>
+                                    <option value="B2">B2 - Pertambangan Batu Bara </option>
+                                    <option value="B3">B3 - Pertambangan Biji Logam </option>
+                                    <option value="B4">B4 - Pertambangan dan Penggalian Lainnya </option>
+                                    <option value="C1">C1 - Industri Migas </option>
+                                    <option value="C2">C2 - Industri Makan Minum (CPO, padi,dll) </option>
+                                    <option value="C3">C3 - Industri Kimia dan Farmasi </option>
+                                    <option value="C4">C4 - Industri Barang Galian </option>
+                                    <option value="C5">C5 - Industri selain 1-4 </option>
+                                    <option value="D">D - Pengadaan Listrik dan Gas </option>
+                                    <option value="E">E - Pengadaan Air, Pengelolaan Sampah, Limbah dan Daur Ulang </option>
+                                    <option value="F">F - Konstruksi </option>
+                                    <option value="G">G - Perdagangan Besar dan Eceran; Reparasi Mobil dan Sepeda Motor </option>
+                                    <option value="H1">H1 - Transportasi Darat </option>
+                                    <option value="H2">H2 - Transportasi Udara </option>
+                                    <option value="H3">H3 - Transportasi Laut </option>
+                                    <option value="H4">H4 - Penyeberangan/ASDP </option>
+                                    <option value="H5">H5 - Penunjang Angkutan dan Pergudangan </option>
+                                    <option value="I">I - Penyediaan Akomodasi dan Makan Minum </option>
+                                    <option value="J">J - Informasi dan Komunikasi </option>
+                                    <option value="K">K - Jasa Keuangan dan Asuransi </option>
+                                    <option value="L">L - Real Estate </option>
+                                    <option value="MN">MN - Jasa Perusahaan </option>
+                                    <option value="O">O - Administrasi Pemerintahan, Pertahanan dan Jaminan Sosial Wajib </option>
+                                    <option value="P">P - Jasa Pendidikan </option>
+                                    <option value="Q">Q - Jasa Kesehatan dan Kegiatan Sosial </option>
+                                    <option value="RSTU">RSTU - Jasa lainnya </option>
+                                    <option value="X">X - Tidak relevan </option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="card-body">
-                <div class="row" id="row-tampilan">
-                    <div class="col-md-1">
-                        <div class="form-group">
-                            <label for="">Tahun</label>
-                            <select id="filter-tahun" class="js-example-basic-single w-100" data-width="100%" n>
-                                <option value="">--Pilih--</option>
-                                <option value="2024">2024</option>
-                                <option value="2023">2023</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-1">
-                        <div class="form-group">
-                            <label for="">Triwulan</label>
-                            <select id="filter-triwulan" class="form-select form-select-lg filter">
-                                <option value="">--Pilih--</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-5">
-                        <div class="form-group">
-                            <label for="">Kategori  Hasil Prediksi ML</label>
-                            <select id="filter-kategori-model" class="form-select form-select-lg filter">
-                                <option value="">--Pilih--</option>
-                                <option value="A1">A1 - Pertanian, Peternakan, Perburuan dan Jasa Pertanian </option>
-                                <option value="A2">A2 - Kehutanan dan Penebangan Kayu </option>
-                                <option value="A3">A3 - Perikanan </option>
-                                <option value="B1">B1 - Pertambangan Migas </option>
-                                <option value="B2">B2 - Pertambangan Batu Bara </option>
-                                <option value="B3">B3 - Pertambangan Biji Logam </option>
-                                <option value="B4">B4 - Pertambangan dan Penggalian Lainnya </option>
-                                <option value="C1">C1 - Industri Migas </option>
-                                <option value="C2">C2 - Industri Makan Minum (CPO, padi,dll) </option>
-                                <option value="C3">C3 - Industri Kimia dan Farmasi </option>
-                                <option value="C4">C4 - Industri Barang Galian </option>
-                                <option value="C5">C5 - Industri selain 1-4 </option>
-                                <option value="D">D - Pengadaan Listrik dan Gas </option>
-                                <option value="E">E - Pengadaan Air, Pengelolaan Sampah, Limbah dan Daur Ulang </option>
-                                <option value="F">F - Konstruksi </option>
-                                <option value="G">G - Perdagangan Besar dan Eceran; Reparasi Mobil dan Sepeda Motor </option>
-                                <option value="H1">H1 - Transportasi Darat </option>
-                                <option value="H2">H2 - Transportasi Udara </option>
-                                <option value="H3">H3 - Transportasi Laut </option>
-                                <option value="H4">H4 - Penyeberangan/ASDP </option>
-                                <option value="H5">H5 - Penunjang Angkutan dan Pergudangan </option>
-                                <option value="I">I - Penyediaan Akomodasi dan Makan Minum </option>
-                                <option value="J">J - Informasi dan Komunikasi </option>
-                                <option value="K">K - Jasa Keuangan dan Asuransi </option>
-                                <option value="L">L - Real Estate </option>
-                                <option value="MN">MN - Jasa Perusahaan </option>
-                                <option value="O">O - Administrasi Pemerintahan, Pertahanan dan Jaminan Sosial Wajib </option>
-                                <option value="P">P - Jasa Pendidikan </option>
-                                <option value="Q">Q - Jasa Kesehatan dan Kegiatan Sosial </option>
-                                <option value="RSTU">RSTU - Jasa lainnya </option>
-                                <option value="X">X - Tidak relevan </option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-5">
-                        <div class="form-group">
-                            <label for="">Kategori  Hasil Verifikasi Manual</label>
-                            <select id="filter-kategori-manual"  class="form-select form-select-lg filter">
-                                <option value="">--Pilih--</option>
-                                <option value="A1">A1 - Pertanian, Peternakan, Perburuan dan Jasa Pertanian </option>
-                                <option value="A2">A2 - Kehutanan dan Penebangan Kayu </option>
-                                <option value="A3">A3 - Perikanan </option>
-                                <option value="B1">B1 - Pertambangan Migas </option>
-                                <option value="B2">B2 - Pertambangan Batu Bara </option>
-                                <option value="B3">B3 - Pertambangan Biji Logam </option>
-                                <option value="B4">B4 - Pertambangan dan Penggalian Lainnya </option>
-                                <option value="C1">C1 - Industri Migas </option>
-                                <option value="C2">C2 - Industri Makan Minum (CPO, padi,dll) </option>
-                                <option value="C3">C3 - Industri Kimia dan Farmasi </option>
-                                <option value="C4">C4 - Industri Barang Galian </option>
-                                <option value="C5">C5 - Industri selain 1-4 </option>
-                                <option value="D">D - Pengadaan Listrik dan Gas </option>
-                                <option value="E">E - Pengadaan Air, Pengelolaan Sampah, Limbah dan Daur Ulang </option>
-                                <option value="F">F - Konstruksi </option>
-                                <option value="G">G - Perdagangan Besar dan Eceran; Reparasi Mobil dan Sepeda Motor </option>
-                                <option value="H1">H1 - Transportasi Darat </option>
-                                <option value="H2">H2 - Transportasi Udara </option>
-                                <option value="H3">H3 - Transportasi Laut </option>
-                                <option value="H4">H4 - Penyeberangan/ASDP </option>
-                                <option value="H5">H5 - Penunjang Angkutan dan Pergudangan </option>
-                                <option value="I">I - Penyediaan Akomodasi dan Makan Minum </option>
-                                <option value="J">J - Informasi dan Komunikasi </option>
-                                <option value="K">K - Jasa Keuangan dan Asuransi </option>
-                                <option value="L">L - Real Estate </option>
-                                <option value="MN">MN - Jasa Perusahaan </option>
-                                <option value="O">O - Administrasi Pemerintahan, Pertahanan dan Jaminan Sosial Wajib </option>
-                                <option value="P">P - Jasa Pendidikan </option>
-                                <option value="Q">Q - Jasa Kesehatan dan Kegiatan Sosial </option>
-                                <option value="RSTU">RSTU - Jasa lainnya </option>
-                                <option value="X">X - Tidak relevan </option>
-                            </select>
+            <div class="card">
+                <div class="card-body">
+                    <div class="row" id="row-tampilan">
+                        <p class="text-muted mb-3"></p>
+                        <div class="table-responsive">
+                            <table id="dataTableExample" class="table table-bordered table-hover ">
+                                <thead class="table-primary">
+                                    <tr>
+                                        <th rowspan="2" class="text-center" style="color:black; font-size:14px;   width: 1%;">Periode</th>
+                                        <th rowspan="2" class="text-center" style="color:black; font-size:14px;   width: 1%;">Label</th>
+                                        <th rowspan="2" class="text-center" style="color:black; font-size:14px;   width: 50%;">Headline</th>
+                                        <th rowspan="2" class="text-center" style="color:black; font-size:14px;   width: 1%;">View</th>
+                                        <th rowspan="2" class="text-center" style="color:black; font-size:14px;   width: 1%;">ACT</th>
+                                        <th colspan="4" class="text-center" style="color:black; font-size:14px;   width: 1%;">Kategori</th>
+                                        <th rowspan="2" class="text-center" style="color:black; font-size:14px;   width: 1%;">ACT</th>
+                                        <th rowspan="2" class="text-center" style="color:black; font-size:14px;   width: 1%;">By</th>
+                                    </tr>
+                                    <tr>
+                                        <th class="text-center" style="color:black; font-size:14px;   width: 1%;">Pred</th>
+                                        <th class="text-center" style="color:black; font-size:14px;   width: 1%;">Prob</th>
+                                        <th class="text-center" style="color:black; font-size:14px;   width: 1%;">Act</th>
+                                        <th class="text-center" style="color:black; font-size:14px;   width: 1%;">Ver</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="odd">
+                                      <td class=" text-nowrap">Q1-2024</td>
+                                      <td class="text-wrap sorting_1">Berita Lhokseumawe (SerambiNews)</td>
+                                      <td class=" text-wrap">
+                                        <a href="https://aceh.tribunnews.com/2024/01/02/serahkan-bantuan-rak-bagi-penjahit-sepatu-pj-wali-kota-lhokseumawe-berharap-jadi-home-industri" target="_blank">Serahkan Bantuan Rak Bagi Penjahit Sepatu, Pj Wali Kota Lhokseumawe Berharap jadi Home Industri</a>
+                                      </td>
+                                      <td>
+                                        <button onclick="showDetailFenomenaView('60230')" data-toggle="modal" data-target="#modal-view" class="btn btn-warning btn-sm">View</button>
+                                      </td>
+                                      <td>
+                                        <button onclick="showDetailFenomena('60230')" data-toggle="modal" data-target="#modal-edit" class="btn btn-primary btn-sm">Update</button>
+                                      </td>
+                                      <td class=" text-wrap text-center">
+                                      </td>
+                                      <td class=" text-wrap text-center"></td>
+                                      <td></td>
+                                      <td class=" text-wrap text-center"></td>
+                                      <td>
+                                        <button onclick="toggleStatus('60230')" class="btn btn-danger btn-sm" id="btn-delete">Arsip!!</button>
+                                      </td>
+                                      <td class=" text-wrap"></td>
+                                    </tr>
+                                    <tr class="even">
+                                      <td class=" text-nowrap">Q1-2024</td>
+                                      <td class="text-wrap sorting_1">Berita Simeulue (SerambiNews)</td>
+                                      <td class=" text-wrap">
+                                        <a href="https://aceh.tribunnews.com/2024/01/08/kip-simeulue-mulai-sortir-dan-lipat-kertas-suara-libatkan-90-orang-pekerja" target="_blank">KIP Simeulue Mulai Sortir dan Lipat Kertas Suara, Libatkan 90 Orang Pekerja</a>
+                                      </td>
+                                      <td>
+                                        <button onclick="" data-toggle="modal" data-target="#modal-view" class="btn btn-warning btn-sm">View</button>
+                                      </td>
+                                      <td>
+                                        <button onclick="" data-toggle="modal" data-target="#modal-edit" class="btn btn-primary btn-sm">Update</button>
+                                      </td>
+                                      <td class=" text-wrap text-center"></td>
+                                      <td class=" text-wrap text-center"></td>
+                                      <td></td>
+                                      <td class=" text-wrap text-center"></td>
+                                      <td>
+                                        <button onclick="" class="btn btn-danger btn-sm" id="btn-delete">Arsip!!</button>
+                                      </td>
+                                      <td class=" text-wrap">BPS</td>
+                                    </tr>
+                                  </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
